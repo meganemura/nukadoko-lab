@@ -177,11 +177,28 @@ function npmLatestVersion() {
 // only slow this harness down for nothing it exercises.
 const NO_BROWSER_DOWNLOAD_ENV = { ...process.env, PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1" };
 
+// `--min-release-age=0` applies to this one install and nothing else in
+// this harness. A machine that sets npm's `min-release-age` refuses a
+// version published inside that window, which is the correct default for a
+// project taking on a dependency and the wrong one here: this row exists to
+// say what a release does, so the harness has to be able to install the
+// exact version it is measuring, including one published today. Every other
+// install this harness runs (a corpus's own dependencies) keeps whatever
+// policy the machine has, since those are ordinary third-party packages
+// being taken on rather than the subject of the measurement.
 function installNpmTrack(workDir) {
   const version = npmLatestVersion();
   const result = spawnSync(
     "npm",
-    ["install", `nukadoko@${version}`, "--no-save", "--no-package-lock", "--no-audit", "--no-fund"],
+    [
+      "install",
+      `nukadoko@${version}`,
+      "--min-release-age=0",
+      "--no-save",
+      "--no-package-lock",
+      "--no-audit",
+      "--no-fund",
+    ],
     { cwd: workDir, encoding: "utf8", env: NO_BROWSER_DOWNLOAD_ENV },
   );
   if (result.status !== 0) {

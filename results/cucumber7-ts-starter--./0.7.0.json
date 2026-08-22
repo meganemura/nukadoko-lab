@@ -1,0 +1,83 @@
+{
+  "targetId": "cucumber7-ts-starter--.",
+  "targetName": "cucumber7-ts-starter",
+  "door": "compat",
+  "track": "npm",
+  "generatedAt": "2026-08-22T21:52:06.486Z",
+  "nukadokoVersion": "0.7.0",
+  "featureFile": "features/simple-maths.feature",
+  "expectedScenarioCount": 2,
+  "run": {
+    "command": "nuka run features/simple-maths.feature",
+    "note": "no --json (run has none — see this file's own header); stdout is one JSON scenario record per line, parsed below",
+    "exitCode": 1,
+    "scenarioCount": 0,
+    "scenarios": [],
+    "stderr": "require is not defined in ES module scope, you can use import instead\n",
+    "pass": false
+  },
+  "check": {
+    "command": "nuka check --json",
+    "exitCode": 1,
+    "json": {
+      "errors": [
+        {
+          "code": "step-file-import-failed",
+          "message": "require is not defined in ES module scope, you can use import instead",
+          "file": "env/set-environment-variables.ts"
+        },
+        {
+          "code": "step-file-import-failed",
+          "message": "Cannot find package 'expect' imported from /Users/meganemura/src/github.com/meganemura/nukadoko-lab/.nukadoko-work/cucumber7-ts-starter--./npm/step-definitions/maths/simple-maths-steps.ts",
+          "file": "step-definitions/maths/simple-maths-steps.ts"
+        }
+      ],
+      "warnings": [
+        {
+          "code": "undefined-step-check-suppressed",
+          "message": "Suppressed 12 undefined-step issues because 2 step files could not be read. undefined-step judgment is on hold until the unreadable glue is fixed"
+        }
+      ]
+    },
+    "stderr": "",
+    "pass": false
+  },
+  "tend": {
+    "command": "nuka tend --json",
+    "exitCode": 0,
+    "json": {
+      "errors": [],
+      "notes": [
+        {
+          "code": "import-failures-unseen",
+          "message": "this report only sees steps that imported successfully; 2 step files could not be read and are missing from every count and finding here (run \"nuka check\" for detail): env/set-environment-variables.ts, step-definitions/maths/simple-maths-steps.ts"
+        },
+        {
+          "code": "feature-never-signed",
+          "message": "features/simple-maths.feature has never been accepted: no acceptance record names it in its feature: frontmatter. Once a run of it is green, nuka accept features/simple-maths.feature freezes that run as its first sign-off.",
+          "file": "features/simple-maths.feature"
+        }
+      ],
+      "summary": {
+        "typedSteps": 0,
+        "compatSteps": 0,
+        "compatStepNames": [],
+        "rationale": {
+          "declared": 0,
+          "total": 0
+        },
+        "describe": {
+          "declared": 0,
+          "total": 0
+        },
+        "scannedFeatureDirs": [
+          "."
+        ],
+        "readOnlySteps": 0
+      }
+    },
+    "stderr": "",
+    "pass": true
+  },
+  "pass": false
+}

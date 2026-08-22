@@ -1,0 +1,108 @@
+{
+  "targetId": "cucumber-js-examples--typescript-node-esm",
+  "targetName": "typescript-node-esm",
+  "door": "compat",
+  "track": "npm",
+  "generatedAt": "2026-08-22T21:52:02.118Z",
+  "nukadokoVersion": "0.7.0",
+  "featureFile": "features/greeting.feature",
+  "expectedScenarioCount": 1,
+  "run": {
+    "command": "nuka run features/greeting.feature",
+    "note": "no --json (run has none — see this file's own header); stdout is one JSON scenario record per line, parsed below",
+    "exitCode": 0,
+    "scenarioCount": 1,
+    "scenarios": [
+      {
+        "scenario_record_id": "scn-20260823-065200-qkwl",
+        "run_id": "run-20260823-065200-gpld",
+        "feature": "features/greeting.feature",
+        "scenario": "Say hello",
+        "line": 3,
+        "status": "passed",
+        "environment": "default",
+        "session": null,
+        "started_at": "2026-08-22T21:52:00.357Z",
+        "finished_at": "2026-08-22T21:52:00.362Z",
+        "steps": [
+          {
+            "text": "the greeter says hello",
+            "status": "passed",
+            "step_record_id": "step-20260823-065200-iq6f"
+          },
+          {
+            "text": "I should have heard \"hello\"",
+            "status": "passed",
+            "step_record_id": "step-20260823-065200-ivr8"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "36c151326e92c161573bad8d26c0924709849601",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260823-065200-qkwl",
+          "screenshots": []
+        }
+      }
+    ],
+    "stderr": "scenario 1/1  features/greeting.feature:3  Say hello\n  step 1/2  ok  0.0s  the greeter says hello\n  step 2/2  ok  0.0s  I should have heard \"hello\"\nsteps     .nukadoko/records/steps/      2\nscenarios .nukadoko/records/scenarios/  1\nallure    .nukadoko/export/allure-results/\nmessages  .nukadoko/export/messages.run-20260823-065200-gpld.ndjson\n1 scenario: 1 passed, 0 failed  (1s)\n",
+    "pass": true
+  },
+  "check": {
+    "command": "nuka check --json",
+    "exitCode": 0,
+    "json": {
+      "errors": [],
+      "warnings": [
+        {
+          "code": "then-compat-step",
+          "message": "Step \"compat: I should have heard {string}\" is a compat step bound in Then position. Compat steps have no mutates declaration to trust here; this is a static coverage gap, not something the tool caught at run time (docs/spec.md \"Compat steps\", \"Keyword semantics\")",
+          "file": "features/greeting.feature",
+          "line": 5,
+          "step": "compat: I should have heard {string}"
+        }
+      ]
+    },
+    "stderr": "",
+    "pass": true
+  },
+  "tend": {
+    "command": "nuka tend --json",
+    "exitCode": 0,
+    "json": {
+      "errors": [],
+      "notes": [
+        {
+          "code": "feature-never-signed",
+          "message": "features/greeting.feature has never been accepted: no acceptance record names it in its feature: frontmatter. Once a run of it is green, nuka accept features/greeting.feature freezes that run as its first sign-off.",
+          "file": "features/greeting.feature"
+        }
+      ],
+      "summary": {
+        "typedSteps": 0,
+        "compatSteps": 2,
+        "compatStepNames": [
+          "compat: the greeter says hello",
+          "compat: I should have heard {string}"
+        ],
+        "rationale": {
+          "declared": 0,
+          "total": 0
+        },
+        "describe": {
+          "declared": 0,
+          "total": 0
+        },
+        "scannedFeatureDirs": [
+          "features"
+        ],
+        "readOnlySteps": 0
+      }
+    },
+    "stderr": "",
+    "pass": true
+  },
+  "pass": true
+}
