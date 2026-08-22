@@ -1,9 +1,10 @@
 {
   "targetId": "cucumber7-ts-starter--.",
   "targetName": "cucumber7-ts-starter",
+  "door": "compat",
   "track": "main",
-  "generatedAt": "2026-08-16T01:07:14.813Z",
-  "commitSha": "450d068ae8b1e86d4d537a04dc91864a33aa7219",
+  "generatedAt": "2026-08-22T21:43:05.038Z",
+  "commitSha": "f71756091ee9bf16999f1aaba4c1dc98aea81f16",
   "featureFile": "features/simple-maths.feature",
   "expectedScenarioCount": 2,
   "run": {
@@ -27,7 +28,7 @@
         },
         {
           "code": "step-file-import-failed",
-          "message": "Cannot find package 'expect' imported from <repo>/.nukadoko-work/cucumber7-ts-starter--./main/step-definitions/maths/simple-maths-steps.ts",
+          "message": "Cannot find package 'expect' imported from /Users/meganemura/src/github.com/meganemura/nukadoko-lab/.nukadoko-work/cucumber7-ts-starter--./main/step-definitions/maths/simple-maths-steps.ts",
           "file": "step-definitions/maths/simple-maths-steps.ts"
         }
       ],
@@ -50,6 +51,11 @@
         {
           "code": "import-failures-unseen",
           "message": "this report only sees steps that imported successfully; 2 step files could not be read and are missing from every count and finding here (run \"nuka check\" for detail): env/set-environment-variables.ts, step-definitions/maths/simple-maths-steps.ts"
+        },
+        {
+          "code": "feature-never-signed",
+          "message": "features/simple-maths.feature has never been accepted: no acceptance record names it in its feature: frontmatter. Once a run of it is green, nuka accept features/simple-maths.feature freezes that run as its first sign-off.",
+          "file": "features/simple-maths.feature"
         }
       ],
       "summary": {
